@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Add StashID to Whisparr",
+  "description": "Add a StashDB scene to your local Whisparr instance.",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://stashdb.org/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
